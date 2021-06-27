@@ -89,6 +89,7 @@ for file in filepaths:
                 brushsize += 5
                 print('brushsize:',brushsize)
             elif k == ord('w'):
+                os.remove(file)
                 print('remain:',len(filepaths)-cnt)
                 break
     except Exception as e:
