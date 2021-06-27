@@ -78,6 +78,7 @@ for file in filepaths:
                 print('Saved:',os.path.join(mask_savedir,os.path.splitext(os.path.basename(file))[0]+'.png'),mask)
                 # cv2.destroyAllWindows()
                 print('remain:',len(filepaths)-cnt)
+                os.remove(file)
                 brushsize = 20
                 break
             elif k == ord('a'):
