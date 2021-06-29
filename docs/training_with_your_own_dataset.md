@@ -8,7 +8,8 @@ We will make "face" as an example. If you don't have any picture, you can downlo
   - Python 3.6+
   - [ffmpeg 3.4.6](http://ffmpeg.org/)
   - [Pytorch 1.0+](https://pytorch.org/)
-  - NVIDIA GPU RTX30XX + CUDA 11.1 CuDNN<br>
+  - NVIDIA Driver 460+
+  - NVIDIA GPU 6GB VRAM for pix2pixHD training, more than 8GB for video + CUDA 11.1 CuDNN<br>
 #### Dependencies
 This code depends on opencv-python, torchvision, matplotlib, tensorboardX, scikit-image available via conda install.
 ```bash
