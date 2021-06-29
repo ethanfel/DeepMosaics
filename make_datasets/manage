@@ -1,14 +1,14 @@
 #!/bin/bash
-file="$1"
+folder="$1"
 for value in {00001..99999} 
 do
   echo "Starting Thunar"
   echo $value
-  thunar $1/$value/origin_image
+  thunar $folder/$value/origin_image
   echo -n "Is this a good folder (y/n)? "
   read answer
   if [ "$answer" != "${answer#[Nn]}" ] ;then
-      rm -rf /media/p5/DeepMosaics/datasets/video/mosaic/$value
+      rm -rf $folder/$value
   else
       echo good good good
   fi
