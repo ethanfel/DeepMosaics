@@ -1,5 +1,5 @@
 # Training with your own dataset
-Training with your own dataset requires a GPU with 6G memory (above GTX1060).<br>
+Training with your own dataset requires a GPU with 6G VRAM for pix2pixHD training, more than 8GB for video <br>
 We will make "face" as an example. If you don't have any picture, you can download [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) or [WIDER](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/WiderFace_Results.html).
 
 ## Getting Started
@@ -9,7 +9,7 @@ We will make "face" as an example. If you don't have any picture, you can downlo
   - [ffmpeg 3.4.6](http://ffmpeg.org/)
   - [Pytorch 1.0+](https://pytorch.org/)
   - NVIDIA Driver 460+
-  - NVIDIA GPU 6GB VRAM for pix2pixHD training, more than 8GB for video + CUDA 11.1 CuDNN<br>
+  - NVIDIA GPU+CUDA 11.1 CuDNN<br>
 #### Dependencies
 This code depends on opencv-python, torchvision, matplotlib, tensorboardX, scikit-image available via conda install.
 ```bash
