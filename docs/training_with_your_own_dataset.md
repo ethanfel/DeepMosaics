@@ -28,12 +28,12 @@ cd make_datasets
 Please generate mask from images which you want to add mosaic(number of images should be above 1000). And then put the images in ```face/origin_image```, and masks in ```face/mask```.<br>
 * You can use ```draw_mask.py```to generate them.
 ```bash
-python draw_mask.py --datadir 'dir for your pictures' --savedir ../datasets/draw/face
+python3 draw_mask.py --datadir 'dir for your pictures' --savedir ../datasets/draw/face
 #Press the left mouse button to draw the mask .  Press 'S' to save mask, 'A' to reduce  brush size, 'D' to increase brush size, 'W' to cancel drawing.
 ```
 * If you want to get images from videos, you can use ```get_image_from_video.py```
 ```bash
-python get_image_from_video.py --datadir 'dir for your videos' --savedir ../datasets/video2image --fps 1
+python3 get_image_from_video.py --datadir 'dir for your videos' --savedir ../datasets/video2image --fps 1
 ```
 ### Clean mosaic dataset
 We provide several methods for generating clean mosaic datasets. However, for better effect, we recommend train a addmosaic model in a small data  first and use it to automatically generate datasets in a big data. (recommend: Method 2(for image) & Method 4(for video))
