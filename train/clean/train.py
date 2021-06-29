@@ -84,7 +84,7 @@ util.makedirs(dir_checkpoint)
 localtime = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
 tensorboard_savedir = os.path.join('checkpoints/tensorboard',localtime+'_'+opt.savename)
 TBGlobalWriter = SummaryWriter(tensorboard_savedir)
-print('Please run "tensorboard --logdir checkpoints/tensorboardX --host=your_server_ip" and input "'+localtime+'" to filter outputs')
+print('Please run "tensorboard --logdir checkpoints/tensorboard --host=your_server_ip" and input "'+localtime+'" to filter outputs')
 
 '''
 --------------------------Init Network--------------------------
