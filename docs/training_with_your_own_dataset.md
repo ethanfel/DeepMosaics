@@ -1,5 +1,7 @@
 # Training with your own dataset
-Training with your own dataset requires a GPU with 6G VRAM for pix2pixHD training, more than 8GB for video <br>
+Training with your own image dataset requires a GPU with 6G VRAM for pix2pixHD training <br>
+Training with your own video dataset requires more than 16G VRAM (Single RTX3090 or several GPU) <br>
+GPU must be at least for the pascal generation <br>
 We will make "face" as an example. If you don't have any picture, you can download [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) or [WIDER](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/WiderFace_Results.html).
 
 ## Getting Started
