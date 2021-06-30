@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ```
 #### Clone this repo
 ```bash
-git clone https://github.com/HypoX64/DeepMosaics
+git clone https://github.com/ethanfel/DeepMosaics
 cd DeepMosaics
 ```
 ## Make training datasets
