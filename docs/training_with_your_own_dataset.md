@@ -43,6 +43,11 @@ python draw_mask.py --datadir 'dir for your pictures' --savedir ../datasets/draw
 ```bash
 python get_image_from_video.py --datadir 'dir for your videos' --savedir ../datasets/video2image --fps 1
 ```
+### Data Augmentation
+use flipflop.sh to x4 your dataset on the mask and origin_image folder, do not use twice.
+```bash
+bash flipflop.sh 'folder'
+```
 ### Clean mosaic dataset
 We provide several methods for generating clean mosaic datasets. However, for better effect, we recommend train a addmosaic model in a small data  first and use it to automatically generate datasets in a big data. (recommend: Method 2(for image) & Method 4(for video))
 * Method 1: Use drawn mask to make pix2pix(HD) datasets   (Require``` origin_image``` and ```mask```)
