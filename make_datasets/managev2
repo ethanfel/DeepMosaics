@@ -1,0 +1,33 @@
+#!/bin/bash
+file="$1"
+model="$2"
+for value in {00000..99999} 
+do
+  echo "Starting Thunar"
+  echo $value
+
+   thunar $1/$value/origin_image & xdotool windowfocus $(cat ~/.window_id) &
+#  thunar $1/$value/mask
+
+read -n 1 -rsp $'w to remove, anything else to keep..\n' key
+
+if [ "$key" = 'w' ]; then
+    rm -rf /media/p5/DeepMosaics/datasets/video/$2/$value
+  
+  else 
+     echo good good good    
+fi
+
+#echo -n "Remove the folder (w)? "
+#  read answer
+#  if [ "$answer" != "${answer#[Ww]}" ] ;then
+#      rm -rf /media/p5/DeepMosaics/datasets/video/$2/$value
+#  else
+#      echo good good good
+#  fi
+
+#  echo "Checking that the process is gone"
+#  ps -A|grep "thunar"
+killall thunar
+sleep 0.1s
+done
