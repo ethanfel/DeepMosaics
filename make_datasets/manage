@@ -1,7 +1,9 @@
 #!/bin/bash
 file="$1"
 model="$2"
-for value in {00000..99999} 
+start="$3"
+end="99999"
+for value in `seq -f "%05g" $start $end`
 do
   echo "Starting Thunar"
   echo $value
