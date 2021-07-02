@@ -31,5 +31,5 @@ fi
 #  echo "Checking that the process is gone"
 #  ps -A|grep "thunar"
 killall thunar
-sleep 0.1s
+sleep 0.2s
 done
