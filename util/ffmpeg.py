@@ -51,7 +51,7 @@ def video2voice(videopath, voicepath, start_time='00:00:00', last_time='00:00:00
     run(args)
 
 def image2video(fps,imagepath,voicepath,videopath):
-    os.system('ffmpeg -y -r '+str(fps)+' -i '+imagepath+' -vcodec libx264 '+os.path.split(voicepath)[0]+'/video_tmp.mp4')
+    os.system('ffmpeg -y -r '+str(fps)+' -preset slow -crf 18 -i '+imagepath+' -vcodec libx264 '+os.path.split(voicepath)[0]+'/video_tmp.mp4')
     os.system('ffmpeg -i '+os.path.split(voicepath)[0]+'/video_tmp.mp4'+' -i "'+voicepath+'" -vcodec copy -acodec aac '+videopath)
 
 def get_video_infos(videopath):
