@@ -1,0 +1,44 @@
+#!/bin/bash
+file="$1"
+model="$2"
+start="$3"
+end="02500"
+cut="120"
+tri="/media/p5/DeepMosaics/datasets/video/tri"
+killall thunar 
+for value in `seq -f "%05g" $start $end`
+do
+ 
+  echo $value
+
+    #nautilus $1/$value/origin_image & 
+cd $1/$value/origin_image
+org=$(ls -1 --file-type | grep -v '/$' | wc -l)
+echo " mon org est $org"
+if [ "$org" -lt "$cut" ]; then
+a=1
+ for i in *.jpg; do
+  new=$(printf "%05d.jpg" "$a") #04 pad to length of 4
+  mv -nv  -- "$i" "$tri/origin_image/$value-$new"
+  let a=a+1
+ done
+      
+  else 
+       echo "120"
+fi
+cd $1/$value/mask
+mask=$(ls -1 --file-type | grep -v '/$' | wc -l)
+echo " mask est $org"
+if [ "$mask" -lt "$cut" ]; then
+a=1
+ for i in *.png; do
+  new=$(printf "%05d.png" "$a") #04 pad to length of 4
+  mv -nv  -- "$i" "$tri/mask/$value-$new"
+  let a=a+1
+ done
+      
+  else 
+       echo "120"
+fi
+
+done

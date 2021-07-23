@@ -1,0 +1,50 @@
+#!/bin/bash
+file="$1"
+model="$2"
+start="$3"
+end="01950"
+#killall thunar & killall nautilus
+for value in `seq -f "%05g" $start $end`
+do
+#  echo "Starting thunar"
+  echo $value
+
+    #nautilus $1/$value/origin_image & 
+    #thunar $1/$value/origin_image $1/$value/mask &
+#    thunar $1/$value/mask $1/$value/origin_image &
+   
+
+#read -n 1 -rsp $'NEXT\n' key
+
+#if [ "$key" = ' ' ]; then
+#    killall thunar #& killall nautilus
+    #ls $1/$value/origin_image -v | cat -n | while read n f; do mv -n "$1/$value/origin_image/$f" "$1/$value/origin_image/$(printf "%05d" $n).jpg" &
+    #ls $1/$value/mask -v | cat -n | while read n f; do mv -n "$1/$value/mask/$f" "$1/$value/mask/$(printf "%05d" $n).png"  
+#  else 
+#     killall thunar #& killall nautilus    
+#fi
+cd $1/$value/origin_image
+#org= find . | wc -l
+#echo "origin_image:"$org
+a=1
+for i in *.jpg; do
+  new=$(printf "%05d.jpg" "$a") #04 pad to length of 4
+  mv -nv  -- "$i" "$new"
+  let a=a+1
+done
+#sleep 0.1s
+cd $1/$value/mask
+#mask= find . | wc -l
+
+a=1
+for i in *.png; do
+  new=$(printf "%05d.png" "$a") #04 pad to length of 4
+  mv -nv  -- "$i" "$new"
+  let a=a+1
+done
+
+
+#sleep 0.2s
+#echo "mask :"$mask
+#echo "origin_image:"$org
+done

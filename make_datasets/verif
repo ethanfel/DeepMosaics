@@ -1,0 +1,27 @@
+#!/bin/bash
+file="$1"
+model="$2"
+start="$3"
+end="99999"
+killall nautilus
+for value in `seq -f "%05g" $start $end`
+do
+  echo "Starting Thunar"
+  echo $value
+
+    #nautilus $1/$value/origin_image & 
+    nautilus $1/$value/ &
+   
+#  thunar $1/$value/mask
+sleep 1s
+#read -n 1 -rsp $'NEXT\n' key
+
+#if [ "$key" = ' ' ]; then
+ #   killall nautilus
+   
+ # else 
+     killall nautilus
+#fi
+
+sleep 0.2s
+done
