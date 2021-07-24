@@ -1,0 +1,15 @@
+#!/bin/bash
+for filename in /media/p5/Funscript/hentai/uncensoredsd/original/do/*; do
+    python deepmosaictemp.py --media_path $filename --mask_threshold 32 --model_path ./pretrained_models/mosaic/clean_hentai_video.pth --gpu_id 0
+    mv $filename /media/p5/Funscript/hentai/uncensoredsd/original
+    dir="${filename%.*}"
+    echo $dir
+    mkdir $dir
+    mv /media/p5/DeepMosaics/tmp/DeepMosaics_temp/replace_mosaic $dir
+    mv /media/p5/DeepMosaics/tmp/DeepMosaics_temp/voice_tmp.mp3 $dir
+    cd /media/p5/Funscript/hentai/uncensoredsd/original
+    mv $dir ./
+    rm -rf /media/p5/DeepMosaics/tmp/DeepMosaics_temp
+    #echo $filename
+done
+
