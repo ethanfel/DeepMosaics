@@ -1,6 +1,6 @@
 #!/bin/bash
 for filename in /content/drive/MyDrive/video/*; do
-    python deepmosaictemp.py --no_preview --media_path $filename --mask_threshold 32 --model_path ./pretrained_models/mosaic/clean_hentai_video.pth --gpu_id 0
+    python deepmosaictemp.py --no_preview --media_path $filename --mask_threshold 32 --model_path /content/DeepMosaics/pretrained_models/mosaic/clean_hentai_video.pth --gpu_id 0
     #mv $filename /media/p5/Funscript/hentai/uncensoredsd/original
     dir="${filename%.*}"
     echo $dir
